@@ -1,8 +1,6 @@
 (ns http-auth.core
-  (:use
-    [compojure.route :only [not-found]]
-    [http-auth.routes :only [all-routes]]
-    [compojure.core :only [defroutes GET POST context]]
+  (:require
+    [http-auth.routes :refer [all-routes]]
     [org.httpkit.server :refer [run-server]]
   ))
 

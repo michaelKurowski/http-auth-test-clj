@@ -1,7 +1,7 @@
 (ns http-auth.routes
-  (:use
-    [compojure.route :only [not-found]]
-    [compojure.core :only [defroutes GET POST context]]
+  (:require
+    [compojure.route :refer [not-found]]
+    [compojure.core :refer [defroutes GET POST context]]
   ))
 
 (defn show-landing-page [req]
@@ -11,4 +11,4 @@
 
 (defroutes all-routes
   (GET "/" [] show-landing-page)
-  (not-found "<p>Page not found.</p>")) ;; all other, return 404
+  (not-found "<p>Page not found.</p>"))
